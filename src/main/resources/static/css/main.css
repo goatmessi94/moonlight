@@ -1,0 +1,1012 @@
+/********************************************** 프로젝트 내용 테이블 START *************************************************/
+/********************************************** 프로젝트 내용 테이블 START *************************************************/
+/********************************************** 프로젝트 내용 테이블 START *************************************************/
+.contents_table {
+    min-width: 1000px;
+    padding: 15px;
+    background-color: white;
+
+}
+.contents_table table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.contents_table table input{
+
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+}
+
+.contents_table table select{
+  height: 30px;
+  width: 100%;
+}
+
+.contents_table table th{
+
+    background-color: #cdd5fc;
+    color:black;
+    border : solid 1px rgb(82, 82, 82);
+    text-align: center;
+    font-size: 14px;
+    padding: 10px;
+
+}
+
+.contents_table table .head{
+
+    background-color: #cdd5fc;
+
+}
+
+.contents_table table td{
+    border : solid 1px rgb(82, 82, 82);
+    font-size: 13px;
+
+    background-color: white;
+}
+
+.contents_table table .center{
+border: 0;
+}
+
+.contents_table_newBtn{
+    margin-bottom: 10px;
+    float: right;
+}
+
+/********************************************** 프로젝트 내용 테이블 END *************************************************/
+/********************************************** 프로젝트 내용 테이블 END *************************************************/
+/********************************************** 프로젝트 내용 테이블 END *************************************************/
+
+
+
+
+
+
+/********************************************** 납품 견적서 테이블 START *************************************************/
+/********************************************** 납품 견적서 테이블 START *************************************************/
+/********************************************** 납품 견적서 테이블 START *************************************************/
+.simple_esimate_table  {
+     margin-top: 15px;
+    background-color: white;
+    width: 1200px;
+    margin-right: 30px;
+}
+
+.simple_esimate_table  table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+}
+
+.simple_esimate_table  table input{
+    text-align: center;
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing : border-box;
+}
+
+.simple_esimate_table  .simple_esimate_table_contents .input_right{
+    text-align: right;
+    padding-right: 5px;
+}
+
+.simple_esimate_table .simple_esimate_table_head input{
+    text-align: left;
+    padding-left: 3px;
+}
+
+.simple_esimate_table  table select{
+    width: 100%;``
+}
+
+.simple_esimate_table table th{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #cdd5fc;
+}
+
+.simple_esimate_table.update table th{
+    background-color: #ececec;
+}
+
+.simple_esimate_table table .head2{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #a0e492;
+}
+
+.simple_esimate_table table td{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: white;
+}
+
+.simple_esimate_table table .center{
+border: 0;
+}
+
+.simple_esimate_table_contents tr:hover input {
+  background-color: rgba(140, 156, 252, 0.3);
+}
+
+.simple_esimate_table_contents .center > input{
+    height: 60%;
+}
+
+.simple_esimate_table_contents tfoot textarea{
+    box-sizing:border-box;
+    font-weight:bold;
+    font-size:14px;
+    padding-left:10px;
+    height:100%;
+    width:100%;
+    border:none;
+    resize:none;
+    padding-bottom:10px;
+}
+
+.simple_esimate_table_contents tfoot textarea:focus{
+    outline:none;
+}
+/********************************************** 납품 견적서 테이블 END *************************************************/
+/********************************************** 납품 견적서 테이블 END *************************************************/
+/********************************************** 납품 견적서 테이블 END *************************************************/
+
+
+
+
+
+
+
+/********************************************** 공사 견적서 테이블 START *************************************************/
+/********************************************** 공사 견적서 테이블 START *************************************************/
+/********************************************** 공사 견적서 테이블 START *************************************************/
+
+.construction_quotation_main_hiddendiv{
+    display: none;
+}
+
+
+.construction_quotation_main_hiddendiv_head_table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+}
+
+.construction_quotation_main_hiddendiv_head_table thead th{
+    font-size: 25px;
+    background-color: white;
+    height: 50px;
+
+}
+
+.construction_quotation_main_hiddendiv_head_table tr:hover input {
+    background-color: rgba(140, 156, 252, 0.3);
+}
+
+.construction_quotation_main_hiddendiv_head_table th{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #cdd5fc;
+}
+
+.construction_quotation_main_hiddendiv_head_table.update th{
+    background-color: #ececec;
+}
+
+.construction_quotation_main_hiddendiv_head_table td{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+}
+
+.construction_quotation_main_hiddendiv_head_table input{
+    text-align: center;
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.construction_quotation_main_hiddendiv_head_table .center input{
+    width: 60%;
+
+}
+
+.construction_quotation_main_hiddendiv_head_table .input_right{
+    text-align: right;
+    padding-right: 5px;
+
+}
+
+.construction_quotation_main_hiddendiv_head_table .center{
+border: 0;
+}
+
+.construction_quotation_main_hiddendiv_head_table .strong{
+font-weight: bold;
+background-color: #eaf3fd;
+}
+
+.construction_quotation_main_hiddendiv_head_table .strong2{
+font-weight: bold;
+font-size: 17px;
+background-color: #eaf3fd;
+}
+
+
+
+.construction_quotation_main{
+    background-color: white;
+    width: 1200px;
+    padding: 15px;
+}
+
+.construction_quotation_main .tabs_nav {
+    display: flex;
+    margin-bottom: 10px;
+    padding: 0;
+    margin-left: 25px;
+}
+
+
+.construction_quotation_main .tabs_nav .tab_li {
+    list-style: none;
+    width: 100px;
+    height: 30px;
+    border: 1px solid #ddd;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background: #eee;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 5px;
+    cursor: pointer;
+
+}
+
+.construction_quotation_main .tabs_nav .tab_li.active {
+    background-color: red ;
+    color: white ;
+
+}
+
+
+.construction_quotation_main .tabs_con .tab_content {
+    display: none;
+    margin-bottom: 10px;
+    page-break-before:always;
+
+
+}
+
+.construction_quotation_main .tabs_con .tab_content.active {
+    display: block;
+}
+
+
+
+/* 테이블 헤드 START */
+.construction_quotation_main .tabs_con .construction_quotation_table_head{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+    position:relative;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_head input{
+    text-align: left;
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    padding-left: 3px;
+    height: 100%;
+    width: 100%;
+    box-sizing : border-box;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_head th{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #cdd5fc;
+}
+.construction_quotation_main .tabs_con .construction_quotation_table_head.update th{
+    background-color: #ececec;
+}
+
+
+.construction_quotation_main .tabs_con .construction_quotation_table_head .head2{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #a0e492;
+}
+
+
+.construction_quotation_main .tabs_con .construction_quotation_table_head td{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_head .center{
+border: 0;
+}
+/*  테이블 헤드 END  */
+
+
+
+/*  테이블 컨텐츠 START  */
+.construction_quotation_main .tabs_con .construction_quotation_table_contents{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents input{
+    text-align: center;
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing : border-box;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents th{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #cdd5fc;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents.update th{
+
+    background-color: #ececec;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents td{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents tr:hover input {
+    background-color: rgba(140, 156, 252, 0.3);
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents .input_right{
+    text-align: right;
+    padding-right: 5px;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents .center{
+    border: 0;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents .center input{
+    height: 60%;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents tfoot textarea{
+    box-sizing:border-box;
+    font-weight:bold;
+    font-size:14px;
+    padding-left:10px;
+    width:100%;
+    border:none;
+    resize:none;
+    padding-bottom:10px;
+}
+
+.construction_quotation_main .tabs_con .construction_quotation_table_contents tfoot textarea:focus{
+    outline:none;
+}
+/*  테이블 컨텐츠 END  */
+
+
+
+.hiddendiv_foot h2{
+    margin-top: 20px;
+}
+
+.hiddendiv_foot_table {
+    border: solid 1px #1d1b31 ;
+
+}
+
+.hiddendiv_foot_table td{
+  border:solid 1px #f0f0f0;
+  height: 30px;
+  font-size: 13px;
+
+}
+
+.hiddendiv_foot_table .head{
+  background-color: #eb9e9c;
+  color: black;
+  height: 30px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.hiddendiv_foot_table .head_disable{
+  background-color: rgba(172, 172, 172, 0.932);
+  color: rgba(255, 255, 255, 0.952);
+  height: 30px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.hiddendiv_foot_table input[type="text"]{
+  text-align: right;
+  padding-right: 5px;
+  height: 70%;
+  width: 60%;
+}
+
+.hiddendiv_foot_table select{
+  height: 84%;
+  width: 75%;
+  margin: 0;
+  text-align: center;
+}
+/********************************************** 공사 견적서 테이블 END *************************************************/
+/********************************************** 공사 견적서 테이블 END *************************************************/
+/********************************************** 공사 견적서 테이블 END *************************************************/
+
+
+/********************************************** 발주서 테이블 START *************************************************/
+/********************************************** 발주서 테이블 START *************************************************/
+/********************************************** 발주서 테이블 START *************************************************/
+.order_table  {
+     margin-top: 15px;
+    background-color: white;
+    width: 1200px;
+    margin-right: 30px;
+}
+
+.order_table  table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    background-color: white;
+    width: 100%;
+}
+
+.order_table  table input{
+    text-align: center;
+    border: none;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-bottom: 0px;
+    height: 100%;
+    width: 100%;
+    box-sizing : border-box;
+}
+
+.order_table  .order_table_contents .input_right{
+    text-align: right;
+    padding-right: 5px;
+}
+
+.order_table .order_table_head input{
+    text-align: left;
+    padding-left: 3px;
+}
+
+.order_table_table  table select{
+    width: 100%;
+}
+
+.order_table table th{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #cecece;
+}
+
+.order_table.update table th{
+    background-color: #ececec;
+}
+
+.order_table table .head2{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: #a0e492;
+}
+
+.order_table table td{
+    color:black;
+    border : solid 1px black;
+    text-align: center;
+    height: 25px;
+    font-size: 13px;
+    background-color: white;
+}
+
+.order_table table .center{
+border: 0;
+}
+
+.order_table_contents tr:hover input {
+  background-color: rgba(140, 156, 252, 0.3);
+}
+
+.order_table_contents .center > input{
+    height: 60%;
+}
+
+.order_table_contents tfoot textarea{
+    box-sizing:border-box;
+    font-weight:bold;
+    font-size:14px;
+    padding-left:10px;
+    width:100%;
+    border:none;
+    resize:none;
+}
+
+.order_table_contents tfoot textarea:focus{
+    outline:none;
+}
+/********************************************** 발주서 테이블 END *************************************************/
+/********************************************** 발주서 테이블 END *************************************************/
+/********************************************** 발주서 테이블 END *************************************************/
+
+
+
+
+
+
+
+
+
+/********************************************** 프린트 START *************************************************/
+/********************************************** 프린트 START *************************************************/
+/********************************************** 프린트 START *************************************************/
+
+@media print{
+
+.no-print{
+    display: none !important;
+}
+
+html{
+    padding:0 !important;
+    margin:0 !important;
+
+
+}
+
+body{
+    padding:0 !important;
+    margin:0 !important;
+    background-color:#fff !important;
+}
+.btn{
+    display:none !important;
+}
+
+
+
+.content{
+    margin:0 !important;
+    padding:0 !important;
+    background-color:yellow;
+    min-height:0 !important;
+}
+
+.main-panel{
+    width:100% !important;
+        margin:0 !important;
+        padding:0 !important;
+        background-color:green;
+        height:0 !important;
+        min-height:0 !important;
+}
+
+.wrapper{
+    height:0 !important;
+    min-height:0 !important;
+}
+
+body{
+        height:0 !important;
+        min-height:0 !important;
+}
+
+.col-md-12{
+    padding:0 !important;
+    margin:0 !important;
+}
+
+.card{
+    padding:0 !important;
+    margin:0 !important;
+}
+
+
+.card-body{
+    padding:0 !important;
+}
+
+.footer{
+    display:none !important;
+}
+
+
+
+.page-inner{
+        margin:0 !important;
+        padding:0 !important;
+        background-color:pink;
+}
+
+
+
+
+
+
+
+.simple_esimate_table{
+    margin-top: 50px !important;
+    margin-right:0 !important;
+    margin-left:0 !important;
+    margin-bottom:5px !important;
+}
+
+.simple_esimate_table{
+    width:1158px;
+}
+
+.simple_esimate_table table td{
+    height:25px;
+    font-size:14px;
+}
+
+.simple_esimate_table table th{
+    height:25px;
+    font-size:15px;
+}
+
+.simple_esimate_table table .center {
+    background-color: #ffffff;
+}
+
+.simple_esimate_table_head colgroup col:first-child{
+    width: 80px !important;
+}
+.simple_esimate_table_head colgroup col:last-child{
+    width: 80px !important;
+}
+
+.simple_esimate_table_contents colgroup col:first-child{
+    width: 80px !important;
+}
+.simple_esimate_table_contents colgroup col:last-child{
+    width: 80px !important;
+}
+
+.simple_esimate_table_contents button{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+.order_table{
+    margin-top: 50px !important;
+    margin-right:0 !important;
+    margin-left:0 !important;
+    margin-bottom:5px !important;
+}
+
+.order_table{
+    width:1158px;
+}
+
+.order_table table td{
+    height:25px;
+    font-size:14px;
+}
+
+.order_table table th{
+    height:25px;
+    font-size:15px;
+}
+
+.order_table table .center {
+    background-color: #ffffff;
+}
+
+.order_table_head colgroup col:first-child{
+    width: 80px !important;
+}
+.order_table_head colgroup col:last-child{
+    width: 80px !important;
+}
+
+.order_table_contents colgroup col:first-child{
+    width: 80px !important;
+}
+.order_table_contents colgroup col:last-child{
+    width: 80px !important;
+}
+
+.order_table_contents button{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tabs_nav{
+    display: none !important;
+}
+
+.w-btn{
+    display: none !important;
+}
+
+.hiddendiv_foot {
+    display: none;
+}
+
+.input_check{
+    display: none;
+}
+
+.construction_quotation_main{
+    width: 1158px;
+    margin-top: 50px !important;
+    margin-right:0 !important;
+    margin-left:0 !important;
+    margin-bottom:0 !important;
+    padding:0 !important;
+}
+
+.card-body{
+    overflow-x:hidden !important;
+}
+
+
+
+
+
+.construction_quotation_table_contents colgroup col:first-child{
+    width: 80px !important;
+}
+.construction_quotation_table_contents colgroup col:last-child{
+    width: 80px !important;
+}
+
+.construction_quotation_table_head colgroup col:first-child{
+    width: 80px !important;
+}
+.construction_quotation_table_head colgroup col:last-child{
+    width: 80px !important;
+}
+.construction_quotation_main{
+    padding: 0;
+}
+
+
+
+
+.construction_quotation_main_hiddendiv_head_table col:first-child{
+    width: 80px !important;
+}
+
+.construction_quotation_main_hiddendiv_head_table col:last-child{
+    width: 80px !important;
+}
+
+.construction_quotation_main_hiddendiv_head_table{
+    width: 1158px;
+    margin-top: 50px !important;
+    margin-right:0 !important;
+    margin-left:0 !important;
+    margin-bottom:0 !important;
+    padding:0 !important;
+}
+
+
+
+
+.construction_quotation_main td{
+
+    height:25px;
+
+}
+
+.construction_quotation_table_head th{
+    font-size:15px !important;
+    height:25px !important;
+}
+
+.construction_quotation_table_head td{
+
+    height:25px !important;
+}
+
+.construction_quotation_table_contents thead th {
+    font-size:15px !important;
+    height:25px !important;
+}
+
+.construction_quotation_table_contents thead td {
+    font-size:14px !important;
+    height:25px !important;
+}
+
+.construction_quotation_main_hiddendiv_head_table tbody th{
+    font-size:15px;
+    height:25px !important;
+}
+
+.construction_quotation_main_hiddendiv_head_table tbody td{
+    font-size:14px;
+    height:25px !important;
+}
+
+.construction_quotation_main_hiddendiv_head_table tbody td{
+    height:25px !important;
+    font-size : 14px !important;
+}
+
+
+
+
+
+.simple_esimate_table .SH_stamp{
+    right:300px !important;
+}
+
+#tab-main .SH_stamp{
+    right:300px  !important;
+}
+
+.order_table .SH_stamp{
+    right:285px  !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+.tabs_con button{
+    display: none;
+}
+
+
+.input_check_all{
+    display: none;
+}
+
+
+.center.strong{
+    background-color: #ffffff;
+}
+
+}
+
+
+
+/********************************************** 프린트 END *************************************************/
+/********************************************** 프린트 END *************************************************/
+/********************************************** 프린트 END *************************************************/
