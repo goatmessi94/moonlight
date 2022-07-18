@@ -72,6 +72,59 @@
                                         <button class="btn btn-primary" onclick="drawKeywordList()">조회
                                         </button>
                                     </div>
+                                    <div>
+                                        <tr>
+                                            <td>시작 검색량</td>
+                                            <td><input type="text" id="minSearchCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>시작 전체상품수</td>
+                                            <td><input type="text" id="minProductCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>시작 국내상품수</td>
+                                            <td><input type="text" id="minDomesticProductCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>시작 해외상품수</td>
+                                            <td><input type="text" id="minOverseaProductCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>시작 최상단가격</td>
+                                            <td><input type="text" id="minProductPrice"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>시작 리뷰수</td>
+                                            <td><input type="text" id="minProductReview"></td>
+                                        </tr>
+                                    </div>
+                                    <div>
+                                        <tr>
+                                            <td>종료 검색량</td>
+                                            <td><input type="text" id="maxSearchCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>종료 전체상품수</td>
+                                            <td><input type="text" id="maxProductCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>종료 국내상품수</td>
+                                            <td><input type="text" id="maxDomesticProductCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>종료 해외상품수</td>
+                                            <td><input type="text" id="maxOverseaProductCount"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>종료 최상단가격</td>
+                                            <td><input type="text" id="maxProductPrice"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>종료 리뷰수</td>
+                                            <td><input type="text" id="maxProductReview"></td>
+                                        </tr>
+                                    </div>
+                                    <tbody>
                                     <table id="keywordSearch"
                                            class="display table table-striped table-hover text-nowrap">
                                         <thead>
@@ -85,7 +138,11 @@
                                             <th>검색량</th>
                                             <th>네이버 경쟁강도</th>
                                             <th>인사이트 경쟁강도</th>
-                                            <th>상품수</th>
+                                            <th>전체 상품수</th>
+                                            <th>국내 상품수</th>
+                                            <th>해외 상품수</th>
+                                            <th>최상단 가격</th>
+                                            <th>최상단 리뷰수</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
@@ -99,11 +156,19 @@
                                             <th>검색량</th>
                                             <th>네이버 경쟁강도</th>
                                             <th>인사이트 경쟁강도</th>
-                                            <th>상품수</th>
+                                            <th>전체 상품수</th>
+                                            <th>국내 상품수</th>
+                                            <th>해외 상품수</th>
+                                            <th>최상단 가격</th>
+                                            <th>최상단 리뷰수</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
                                         <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -262,10 +327,12 @@
                 detailSelectBox.add(all, null);
                 let opt = [];
                 for (i=0; i<data.length; i++) {
+                    if (data[0] !== null) {
                     opt[i] = document.createElement("option");
                     opt[i].value = data[i];
                     opt[i].text = data[i];
                     detailSelectBox.add(opt[i], null);
+                    }
                 }
                 document.querySelector('#selectBox').insertBefore(detailSelectBox, document.querySelector("#selectBox").childNodes[6]);
                 $("#detailclass").change(function () {
@@ -323,10 +390,9 @@
             $('#keywordSearch').DataTable().destroy();
         }
 
-        console.log(data);
 
-        for(i=0; i<data.length; i++) {
-            data[i] = {...data[i], searchCount : data[i].monthlyPcQcCnt+data[i].monthlyMobileQcCnt}
+        for(let i=0, size = data.length; i<size; i++) {
+            data[i] = {seq : i+1,...data[i], searchCount : data[i].monthlyPcQcCnt+data[i].monthlyMobileQcCnt, domesticProductCount : data[i].productCount-data[i].productOverseas, itemscoutCompIdx: Math.round(data[i].productCount/(data[i].monthlyPcQcCnt+data[i].monthlyMobileQcCnt))}
         }
 
         console.log(data);
@@ -348,7 +414,7 @@
             ],
             columns: [
                 {
-                    data: 'relKeyword',
+                    data: 'seq',
                     render: function (data, type, row, meta) {
                         return (data) ? data : "-";
                     }
@@ -396,13 +462,37 @@
                     }
                 },
                 {
-                    data: 'compIdx',
+                    data: 'itemscoutCompIdx',
                     render: function (data, type, row, meta) {
                         return (data) ? data : "-";
                     }
                 },
                 {
                     data: 'productCount',
+                    render: function (data, type, row, meta) {
+                        return (data) ? data : "-";
+                    }
+                },
+                {
+                    data: 'domesticProductCount',
+                    render: function (data, type, row, meta) {
+                        return (data) ? data : "-";
+                    }
+                },
+                {
+                    data: 'productOverseas',
+                    render: function (data, type, row, meta) {
+                        return (data) ? data : "-";
+                    }
+                },
+                {
+                    data: 'productPrice',
+                    render: function (data, type, row, meta) {
+                        return (data) ? data : "-";
+                    }
+                },
+                {
+                    data: 'productReview',
                     render: function (data, type, row, meta) {
                         return (data) ? data : "-";
                     }
@@ -413,7 +503,81 @@
             destroy: true
         });
         Datatables.refresh(keywordSearchTable, data);
+
+        $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+            //검색량
+            let minSearchCount = parseInt($('#minSearchCount').val(), 10);
+            let maxSearchCount = parseInt($('#maxSearchCount').val(), 10);
+            let searchCount = parseFloat(data[6]) || 0; // use data for the searchCount column
+
+            //전체상품수
+            let minProductCount = parseInt($('#minProductCount').val(), 10);
+            let maxProductCount = parseInt($('#maxProductCount').val(), 10);
+            let productCount = parseFloat(data[9]) || 0; // use data for the searchCount column;
+
+            //국내상품수
+            let minDomesticProductCount = parseInt($('#minDomesticProductCount').val(), 10);
+            let maxDomesticProductCount = parseInt($('#maxDomesticProductCount').val(), 10);
+            let domesticProductCount = parseFloat(data[10]) || 0; // use data for the searchCount column;
+
+            //해외상품수
+            let minOverseaProductCount = parseInt($('#minOverseaProductCount').val(), 10);
+            let maxOverseaProductCount = parseInt($('#maxOverseaProductCount').val(), 10);
+            let overseaProductCount = parseFloat(data[11]) || 0; // use data for the searchCount column;
+
+            //최상단가격
+            let minProductPrice = parseInt($('#minProductPrice').val(), 10);
+            let maxProductPrice = parseInt($('#maxProductPrice').val(), 10);
+            let productPrice = parseFloat(data[12]) || 0; // use data for the searchCount column;
+
+            //최상단 리뷰수
+            let minProductReview = parseInt($('#minProductReview').val(), 10);
+            let maxProductReview = parseInt($('#maxProductReview').val(), 10);
+            let productReview = parseFloat(data[13]) || 0; // use data for the searchCount column;
+
+            if (
+                (isNaN(minSearchCount) && isNaN(maxSearchCount)) ||
+                (isNaN(minSearchCount) && searchCount <= maxSearchCount) ||
+                (minSearchCount <= searchCount && isNaN(maxSearchCount)) ||
+                (minSearchCount <= searchCount && searchCount <= maxSearchCount)
+                &&
+
+                (isNaN(minProductCount) && isNaN(maxProductCount)) ||
+                (isNaN(minProductCount) && productCount <= maxProductCount) ||
+                (minProductCount <= productCount && isNaN(maxProductCount)) ||
+                (minProductCount <= productCount && productCount <= maxProductCount) &&
+
+                (isNaN(minDomesticProductCount) && isNaN(maxDomesticProductCount)) ||
+                (isNaN(minDomesticProductCount) && domesticProductCount <= maxDomesticProductCount) ||
+                (minDomesticProductCount <= domesticProductCount && isNaN(maxDomesticProductCount)) ||
+                (minDomesticProductCount <= domesticProductCount && domesticProductCount <= maxDomesticProductCount) &&
+
+                (isNaN(minOverseaProductCount) && isNaN(maxOverseaProductCount)) ||
+                (isNaN(minOverseaProductCount) && overseaProductCount <= maxOverseaProductCount) ||
+                (minOverseaProductCount <= overseaProductCount && isNaN(maxOverseaProductCount)) ||
+                (minOverseaProductCount <= overseaProductCount && overseaProductCount <= maxOverseaProductCount) &&
+
+                (isNaN(minProductPrice) && isNaN(maxProductPrice)) ||
+                (isNaN(minProductPrice) && productPrice <= maxProductPrice) ||
+                (minProductPrice <= productPrice && isNaN(maxProductPrice)) ||
+                (minProductPrice <= productPrice && productPrice <= maxProductPrice) &&
+
+                (isNaN(minProductReview) && isNaN(maxProductReview)) ||
+                (isNaN(minProductReview) && productReview <= maxProductReview) ||
+                (minProductReview <= productReview && isNaN(maxProductReview)) ||
+                (minProductReview <= productReview && productReview <= maxProductReview)
+            ) {
+                return true;
+            }
+            return false;
+        });
+
+        $('#minSearchCount,#maxSearchCount,#minProductCoun,#maxProductCount,#minDomesticProductCount,#maxDomesticProductCount,#minOverseaProductCount,#maxOverseaProductCount,#minProductPrice,#maxProductPrice,#minProductReview,#maxProductReview').keyup(function () {
+            keywordSearchTable.draw();
+            console.log("onKEYUP!")
+        });
     }
+
 
     window.onload = function () {
         drawKeywordList();

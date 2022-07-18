@@ -28,4 +28,7 @@ public class SearchKeyword {
     private int plAvgDepth;
     private String compIdx;
     private int productCount;
+    private int productOverseas;
+    private int productPrice;
+    private int productReview;
 }

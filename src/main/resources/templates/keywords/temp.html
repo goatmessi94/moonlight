@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    $.fn.dataTable.ext.search.push(function (settings, data, dataIndex) {
+        //검색량
+        let minSearchCount = parseInt($('#minSearchCount').val(), 10);
+        let maxSearchCount = parseInt($('#maxSearchCount').val(), 10);
+        let searchCount = parseFloat(data[6]) || 0; // use data for the searchCount column
+
+        //전체상품수
+        let minProductCount = parseInt($('#minProductCount').val(), 10);
+        let maxProductCount = parseInt($('#maxProductCount').val(), 10);
+        let productCount = parseFloat(data[9]) || 0; // use data for the searchCount column;
+
+        //국내상품수
+        let minDomesticProductCount = parseInt($('#minDomesticProductCount').val(), 10);
+        let maxDomesticProductCount = parseInt($('#maxDomesticProductCount').val(), 10);
+        let domesticProductCount = parseFloat(data[10]) || 0; // use data for the searchCount column;
+
+        //해외상품수
+        let minOverseaProductCount = parseInt($('#minOverseaProductCount').val(), 10);
+        let maxOverseaProductCount = parseInt($('#maxOverseaProductCount').val(), 10);
+        let overseaProductCount = parseFloat(data[11]) || 0; // use data for the searchCount column;
+
+        //최상단가격
+        let minProductPrice = parseInt($('#minProductPrice').val(), 10);
+        let maxProductPrice = parseInt($('#maxProductPrice').val(), 10);
+        let productPrice = parseFloat(data[12]) || 0; // use data for the searchCount column;
+
+        //최상단 리뷰수
+        let minProductReview = parseInt($('#minProductReview').val(), 10);
+        let maxProductReview = parseInt($('#maxProductReview').val(), 10);
+        let productReview = parseFloat(data[13]) || 0; // use data for the searchCount column;
+
+        if (
+            (isNaN(minSearchCount) && isNaN(maxSearchCount)) ||
+            (isNaN(minSearchCount) && searchCount <= maxSearchCount) ||
+            (minSearchCount <= searchCount && isNaN(maxSearchCount)) ||
+            (minSearchCount <= searchCount && searchCount <= maxSearchCount)
+            &&
+
+            (isNaN(minProductCount) && isNaN(maxProductCount)) ||
+            (isNaN(minProductCount) && productCount <= maxProductCount) ||
+            (minProductCount <= productCount && isNaN(maxProductCount)) ||
+            (minProductCount <= productCount && productCount <= maxProductCount) &&
+
+            (isNaN(minDomesticProductCount) && isNaN(maxDomesticProductCount)) ||
+            (isNaN(minDomesticProductCount) && domesticProductCount <= maxDomesticProductCount) ||
+            (minDomesticProductCount <= domesticProductCount && isNaN(maxDomesticProductCount)) ||
+            (minDomesticProductCount <= domesticProductCount && domesticProductCount <= maxDomesticProductCount) &&
+
+            (isNaN(minOverseaProductCount) && isNaN(maxOverseaProductCount)) ||
+            (isNaN(minOverseaProductCount) && overseaProductCount <= maxOverseaProductCount) ||
+            (minOverseaProductCount <= overseaProductCount && isNaN(maxOverseaProductCount)) ||
+            (minOverseaProductCount <= overseaProductCount && overseaProductCount <= maxOverseaProductCount) &&
+
+            (isNaN(minProductPrice) && isNaN(maxProductPrice)) ||
+            (isNaN(minProductPrice) && productPrice <= maxProductPrice) ||
+            (minProductPrice <= productPrice && isNaN(maxProductPrice)) ||
+            (minProductPrice <= productPrice && productPrice <= maxProductPrice) &&
+
+            (isNaN(minProductReview) && isNaN(maxProductReview)) ||
+            (isNaN(minProductReview) && productReview <= maxProductReview) ||
+            (minProductReview <= productReview && isNaN(maxProductReview)) ||
+            (minProductReview <= productReview && productReview <= maxProductReview)
+        ) {
+            return true;
+        }
+        return false;
+    });
+</script>
+</body>
+</html>
