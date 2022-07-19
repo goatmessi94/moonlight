@@ -31,4 +31,6 @@ public class SearchKeyword {
     private int productOverseas;
     private int productPrice;
     private int productReview;
+    private Integer productOverseasPrice;
+    private Integer productOverseasReview;
 }

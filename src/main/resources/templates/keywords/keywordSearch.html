@@ -74,54 +74,70 @@
                                     </div>
                                     <div>
                                         <tr>
-                                            <td>시작 검색량</td>
+                                            <td>검색량</td>
                                             <td><input type="text" id="minSearchCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>시작 전체상품수</td>
+                                            <td> 전체상품수</td>
                                             <td><input type="text" id="minProductCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>시작 국내상품수</td>
+                                            <td> 국내상품수</td>
                                             <td><input type="text" id="minDomesticProductCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>시작 해외상품수</td>
+                                            <td> 해외상품수</td>
                                             <td><input type="text" id="minOverseaProductCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>시작 최상단가격</td>
+                                            <td> 최상단가격</td>
                                             <td><input type="text" id="minProductPrice"></td>
                                         </tr>
                                         <tr>
-                                            <td>시작 리뷰수</td>
+                                            <td> 리뷰수</td>
                                             <td><input type="text" id="minProductReview"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> 해외가격</td>
+                                            <td><input type="text" id="minProductOverseasPrice"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> 해외리뷰수</td>
+                                            <td><input type="text" id="minProductOverseasReview"></td>
                                         </tr>
                                     </div>
                                     <div>
                                         <tr>
-                                            <td>종료 검색량</td>
-                                            <td><input type="text" id="maxSearchCount"></td>
+                                            <td> 검색량</td>
+                                            <td><input type="text" id="maxSearchCount" width="200px"></td>
                                         </tr>
                                         <tr>
-                                            <td>종료 전체상품수</td>
+                                            <td> 전체상품수</td>
                                             <td><input type="text" id="maxProductCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>종료 국내상품수</td>
+                                            <td> 국내상품수</td>
                                             <td><input type="text" id="maxDomesticProductCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>종료 해외상품수</td>
+                                            <td> 해외상품수</td>
                                             <td><input type="text" id="maxOverseaProductCount"></td>
                                         </tr>
                                         <tr>
-                                            <td>종료 최상단가격</td>
+                                            <td> 최상단가격</td>
                                             <td><input type="text" id="maxProductPrice"></td>
                                         </tr>
                                         <tr>
-                                            <td>종료 리뷰수</td>
+                                            <td> 리뷰수</td>
                                             <td><input type="text" id="maxProductReview"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> 해외가격</td>
+                                            <td><input type="text" id="maxProductOverseasPrice"></td>
+                                        </tr>
+                                        <tr>
+                                            <td> 해외리뷰수</td>
+                                            <td><input type="text" id="maxProductOverseasReview"></td>
                                         </tr>
                                     </div>
                                     <tbody>
@@ -143,6 +159,8 @@
                                             <th>해외 상품수</th>
                                             <th>최상단 가격</th>
                                             <th>최상단 리뷰수</th>
+                                            <th>해외최상단 가격</th>
+                                            <th>해외최상단 리뷰수</th>
                                         </tr>
                                         </thead>
                                         <tfoot>
@@ -161,10 +179,14 @@
                                             <th>해외 상품수</th>
                                             <th>최상단 가격</th>
                                             <th>최상단 리뷰수</th>
+                                            <th>해외최상단 가격</th>
+                                            <th>해외최상단 리뷰수</th>
                                         </tr>
                                         </tfoot>
                                         <tbody>
                                         <tr>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
@@ -496,6 +518,18 @@
                     render: function (data, type, row, meta) {
                         return (data) ? data : "-";
                     }
+                },
+                {
+                    data: 'productOverseasPrice',
+                    render: function (data, type, row, meta) {
+                        return (data) ? data : "-";
+                    }
+                },
+                {
+                    data: 'productOverseasReview',
+                    render: function (data, type, row, meta) {
+                        return (data) ? data : "-";
+                    }
                 }
             ],
             order: [],
@@ -530,51 +564,71 @@
             let maxProductPrice = parseInt($('#maxProductPrice').val(), 10);
             let productPrice = parseFloat(data[12]) || 0; // use data for the searchCount column;
 
-            //최상단 리뷰수
+            //최상단리뷰
             let minProductReview = parseInt($('#minProductReview').val(), 10);
             let maxProductReview = parseInt($('#maxProductReview').val(), 10);
             let productReview = parseFloat(data[13]) || 0; // use data for the searchCount column;
 
+            //해외 최상단 가격
+            let minProductOverseasPrice = parseInt($('#minProductOverseasPrice').val(), 10);
+            let maxProductOverseasPrice = parseInt($('#maxProductOverseasPrice').val(), 10);
+            let productOverseasPrice = parseFloat(data[14]) || 0; // use data for the searchCount column;
+
+            //해외 최상단 리뷰
+            let minProductOverseasReview = parseInt($('#minProductOverseasReview').val(), 10);
+            let maxProductOverseasReview = parseInt($('#maxProductOverseasReview').val(), 10);
+            let productOverseasReview = parseFloat(data[15]) || 0; // use data for the searchCount column;
+
             if (
-                (isNaN(minSearchCount) && isNaN(maxSearchCount)) ||
+                ((isNaN(minSearchCount) && isNaN(maxSearchCount)) ||
                 (isNaN(minSearchCount) && searchCount <= maxSearchCount) ||
                 (minSearchCount <= searchCount && isNaN(maxSearchCount)) ||
-                (minSearchCount <= searchCount && searchCount <= maxSearchCount)
+                (minSearchCount <= searchCount && searchCount <= maxSearchCount))
                 &&
 
-                (isNaN(minProductCount) && isNaN(maxProductCount)) ||
+                ((isNaN(minProductCount) && isNaN(maxProductCount)) ||
                 (isNaN(minProductCount) && productCount <= maxProductCount) ||
                 (minProductCount <= productCount && isNaN(maxProductCount)) ||
-                (minProductCount <= productCount && productCount <= maxProductCount) &&
+                (minProductCount <= productCount && productCount <= maxProductCount)) &&
 
-                (isNaN(minDomesticProductCount) && isNaN(maxDomesticProductCount)) ||
+                ((isNaN(minDomesticProductCount) && isNaN(maxDomesticProductCount)) ||
                 (isNaN(minDomesticProductCount) && domesticProductCount <= maxDomesticProductCount) ||
                 (minDomesticProductCount <= domesticProductCount && isNaN(maxDomesticProductCount)) ||
-                (minDomesticProductCount <= domesticProductCount && domesticProductCount <= maxDomesticProductCount) &&
+                (minDomesticProductCount <= domesticProductCount && domesticProductCount <= maxDomesticProductCount)) &&
 
-                (isNaN(minOverseaProductCount) && isNaN(maxOverseaProductCount)) ||
+                ((isNaN(minOverseaProductCount) && isNaN(maxOverseaProductCount)) ||
                 (isNaN(minOverseaProductCount) && overseaProductCount <= maxOverseaProductCount) ||
                 (minOverseaProductCount <= overseaProductCount && isNaN(maxOverseaProductCount)) ||
-                (minOverseaProductCount <= overseaProductCount && overseaProductCount <= maxOverseaProductCount) &&
+                (minOverseaProductCount <= overseaProductCount && overseaProductCount <= maxOverseaProductCount)) &&
 
-                (isNaN(minProductPrice) && isNaN(maxProductPrice)) ||
+                ((isNaN(minProductPrice) && isNaN(maxProductPrice)) ||
                 (isNaN(minProductPrice) && productPrice <= maxProductPrice) ||
                 (minProductPrice <= productPrice && isNaN(maxProductPrice)) ||
-                (minProductPrice <= productPrice && productPrice <= maxProductPrice) &&
+                (minProductPrice <= productPrice && productPrice <= maxProductPrice)) &&
 
-                (isNaN(minProductReview) && isNaN(maxProductReview)) ||
+                ((isNaN(minProductReview) && isNaN(maxProductReview)) ||
                 (isNaN(minProductReview) && productReview <= maxProductReview) ||
                 (minProductReview <= productReview && isNaN(maxProductReview)) ||
-                (minProductReview <= productReview && productReview <= maxProductReview)
+                (minProductReview <= productReview && productReview <= maxProductReview)) &&
+
+                ((isNaN(minProductOverseasPrice) && isNaN(maxProductOverseasPrice)) ||
+                (isNaN(minProductOverseasPrice) && productOverseasPrice <= maxProductOverseasPrice) ||
+                (minProductOverseasPrice <= productOverseasPrice && isNaN(maxProductOverseasPrice)) ||
+                (minProductOverseasPrice <= productOverseasPrice && productOverseasPrice <= maxProductOverseasPrice)) &&
+
+                ((isNaN(minProductOverseasReview) && isNaN(maxProductOverseasReview)) ||
+                (isNaN(minProductOverseasReview) && productOverseasReview <= maxProductOverseasReview) ||
+                (minProductOverseasReview <= productOverseasReview && isNaN(maxProductOverseasReview)) ||
+                (minProductOverseasReview <= productOverseasReview && productOverseasReview <= maxProductOverseasReview))
+
             ) {
                 return true;
             }
             return false;
         });
 
-        $('#minSearchCount,#maxSearchCount,#minProductCoun,#maxProductCount,#minDomesticProductCount,#maxDomesticProductCount,#minOverseaProductCount,#maxOverseaProductCount,#minProductPrice,#maxProductPrice,#minProductReview,#maxProductReview').keyup(function () {
+        $('#minSearchCount,#maxSearchCount,#minProductCount,#maxProductCount,#minDomesticProductCount,#maxDomesticProductCount,#minOverseaProductCount,#maxOverseaProductCount,#minProductPrice,#maxProductPrice,#minProductReview,#maxProductReview,#minProductOverseasPrice,#maxProductOverseasPrice,#minProductOverseasReview,#maxProductOverseasReview').keyup(function () {
             keywordSearchTable.draw();
-            console.log("onKEYUP!")
         });
     }
 
